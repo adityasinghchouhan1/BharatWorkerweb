@@ -16,7 +16,7 @@ const Whoweare = () => {
   const sectionRef = useRef(null)
 
   useEffect(() => {
-    // Animate individual image cards
+    // Animate image cards
     imagesRef.current.forEach((img) => {
       gsap.fromTo(
         img,
@@ -29,21 +29,21 @@ const Whoweare = () => {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 1,
+          duration: 1.5,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: img,
-            start: 'top 85%',
+            start: 'top 80%',
             toggleActions: 'play none none reverse',
           },
         }
       )
     })
 
-    // Smooth & responsive scroll animation using matchMedia
+    // Responsive scroll animations using matchMedia
     ScrollTrigger.matchMedia({
-      // For all screen sizes
-      all: () => {
+      // ✅ For desktop and tablets
+      '(min-width: 768px)': () => {
         gsap
           .timeline({
             scrollTrigger: {
@@ -54,16 +54,41 @@ const Whoweare = () => {
             },
           })
           .to(groupImageRef.current, {
-            y: '15vh', // Responsive movement
+            y: '25vh',
             ease: 'power2.out',
           })
           .to(
             sectionRef.current,
             {
-              y: '-5vh', // Responsive pull-up
+              y: '-20vh',
               ease: 'power2.out',
             },
-            '<' // sync both
+            '<'
+          )
+      },
+
+      // ✅ For mobile screens
+      '(max-width: 767px)': () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: groupImageRef.current,
+              start: 'top center',
+              end: '+=200', // less scroll distance
+              scrub: 1,
+            },
+          })
+          .to(groupImageRef.current, {
+            y: '15vh', // less movement on smaller screens
+            ease: 'power2.out',
+          })
+          .to(
+            sectionRef.current,
+            {
+              y: '-8vh', // less section shift
+              ease: 'power2.out',
+            },
+            '<'
           )
       },
     })
@@ -136,15 +161,26 @@ const Whoweare = () => {
 
           {/* Right Image Grid */}
           <div className="grid grid-cols-2 gap-4">
-            {[workers5, workers4, workers2, workers3].map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt="Worker"
-                className="rounded-lg w-full h-auto object-cover"
-                ref={(el) => (imagesRef.current[i] = el)}
-              />
-            ))}
+            {[workers5, workers4, workers2, workers3].map((img, i) => {
+              const sizeClass =
+                i === 0
+                  ? 'w-48 ' // tall image
+                  : i === 1
+                  ? 'w-64' // small
+                  : i === 2
+                  ? 'w-64' // medium
+                  : 'w-48' // fallback
+
+              return (
+                <img
+                  key={i}
+                  src={img}
+                  alt={`Worker ${i + 1}`}
+                  className={`rounded-lg w-full object-cover ${sizeClass}`}
+                  ref={(el) => (imagesRef.current[i] = el)}
+                />
+              )
+            })}
           </div>
         </div>
       </section>

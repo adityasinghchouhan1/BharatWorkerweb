@@ -5,7 +5,7 @@ import Button from '../UI/Button'
 const IntroPage = () => {
   return (
     <section
-      className="relative bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden"
+      className="relative bg-cover bg-center bg-no-repeat  flex flex-col items-center justify-center text-center px-4 overflow-hidden py-3"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="relative z-10 max-w-5xl mx-auto">
