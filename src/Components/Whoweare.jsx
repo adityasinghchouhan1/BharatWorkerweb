@@ -115,7 +115,7 @@ const Whoweare = () => {
       {/* Main Section */}
       <section
         ref={sectionRef}
-        className="bg-[#0a3f87] text-white py-16 px-4 sm:px-6 md:px-12 w-full z-30"
+        className="bg-[#0a3f87] text-white pt-16 px-4 sm:px-6 md:px-12 w-full z-30"
       >
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -128,7 +128,7 @@ const Whoweare = () => {
               Who We Are
             </h2>
 
-            <p className="text-white text-base sm:text-lg mb-6 leading-relaxed">
+            <p className="text-gray-300 text-base sm:text-lg mb-6 leading-relaxed">
               Bharat Workers is a mission-driven platform aimed at improving
               livelihoods by connecting skilled Indian workers with meaningful
               job opportunities. Whether you’re an electrician, plumber,
@@ -138,15 +138,19 @@ const Whoweare = () => {
 
             <div className="mb-6 space-y-4">
               <div>
-                <h4 className="text-white font-semibold mb-1">Our Vision</h4>
-                <p className="text-white/90">
+                <h4 className="text-white text-lg font-semibold mb-1">
+                  Our Vision
+                </h4>
+                <p className="text-gray-300">
                   To create India’s most trusted network of verified skilled
                   professionals.
                 </p>
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-1">Our Mission</h4>
-                <ul className="list-disc list-inside space-y-1 text-white/90">
+                <h4 className="text-white text-lg font-semibold mb-1">
+                  Our Mission
+                </h4>
+                <ul className="list-disc list-inside space-y-1 text-gray-300">
                   <li>Uplift the skilled workforce</li>
                   <li>Simplify job access</li>
                   <li>Support fair wages and dignity of labor</li>
@@ -160,27 +164,38 @@ const Whoweare = () => {
           </div>
 
           {/* Right Image Grid */}
-          <div className="grid grid-cols-2 gap-4">
-            {[workers5, workers4, workers2, workers3].map((img, i) => {
-              const sizeClass =
-                i === 0
-                  ? 'w-48 ' // tall image
-                  : i === 1
-                  ? 'w-64' // small
-                  : i === 2
-                  ? 'w-64' // medium
-                  : 'w-48' // fallback
+          <div className="flex flex-row flex-wrap justify-center gap-4">
+            {/* Left Column */}
+            <div className="flex flex-col gap-4">
+              <img
+                src={workers5}
+                alt="Worker 1"
+                className="w-48 rounded-xl object-cover ms-5"
+                ref={(el) => (imagesRef.current[0] = el)}
+              />
+              <img
+                src={workers2}
+                alt="Worker 3"
+                className="w-60 rounded-xl object-cover"
+                ref={(el) => (imagesRef.current[1] = el)}
+              />
+            </div>
 
-              return (
-                <img
-                  key={i}
-                  src={img}
-                  alt={`Worker ${i + 1}`}
-                  className={`rounded-lg w-full object-cover ${sizeClass}`}
-                  ref={(el) => (imagesRef.current[i] = el)}
-                />
-              )
-            })}
+            {/* Right Column */}
+            <div className="flex flex-col gap-4">
+              <img
+                src={workers4}
+                alt="Worker 2"
+                className="w-60 mt-8 rounded-xl object-cover"
+                ref={(el) => (imagesRef.current[2] = el)}
+              />
+              <img
+                src={workers3}
+                alt="Worker 4"
+                className="w-40 sm:w-48 md:w-56 rounded-xl object-cover"
+                ref={(el) => (imagesRef.current[3] = el)}
+              />
+            </div>
           </div>
         </div>
       </section>

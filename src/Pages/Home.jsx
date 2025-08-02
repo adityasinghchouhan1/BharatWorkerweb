@@ -8,7 +8,9 @@ const Home = () => {
     <div>
       <IntroPage />
       <Whoweare />
-      <OurServices />
+      <div className="-mt-24 sm:-mt-36 relative z-10">
+        <OurServices />
+      </div>
     </div>
   )
 }

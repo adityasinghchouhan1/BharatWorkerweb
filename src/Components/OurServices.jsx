@@ -5,15 +5,13 @@ import ServiceCards from '../Components/ServiceCards'
 const OurServices = () => {
   return (
     <>
-      <section className="bg-[#0c3f86] text-white py-20 relative overflow-hidden z-0">
+      <section className="bg-[#0c3f86] text-white pb-20 relative overflow-hidden z-0">
         <img
           src={decologo}
           alt="Decorative Icon"
-          className="w-16 sm:w-24 h-auto mb-10 md:mb-0 ms-10"
+          className="w-16 sm:w-32 h-auto mb-10 md:mb-0 ms-10"
         />
-        <div className="container px-4 flex items-center justify-center">
-          {/* Image / Icon */}
-
+        <div className="px-4 flex items-center justify-center w-full">
           {/* Text Content */}
           <div className=" flex justify-center items-center flex-col text-center max-w-3xl sm:px-20 px-0 space-y-4">
             <div className="text-xs uppercase tracking-widest text-white font-semibold bg-blue-800 text-center rounded-full mb-2 px-3 py-1">
