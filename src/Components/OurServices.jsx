@@ -1,8 +1,52 @@
-import React from 'react'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import decologo from '../../public/deco/s1-2.webp' // Ensure path is correct
-import ServiceCards from '../Components/ServiceCards'
+import ServiceCards from './ServiceCards'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const OurServices = () => {
+  const titleRef = useRef(null)
+  const descRef = useRef(null)
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: titleRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none reverse',
+      },
+    })
+
+    tl.fromTo(
+      titleRef.current,
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+      }
+    ).fromTo(
+      descRef.current,
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+      },
+      '-=0.5' // starts slightly before title animation ends
+    )
+  }, [])
+
   return (
     <>
       <section className="bg-[#0c3f86] text-white pb-20 relative overflow-hidden z-0">
@@ -17,10 +61,17 @@ const OurServices = () => {
             <div className="text-xs uppercase tracking-widest text-white font-semibold bg-blue-800 text-center rounded-full mb-2 px-3 py-1">
               Our Services
             </div>
-            <h2 className="text-4xl sm:text-5xl font-semibold mb-2 leading-snug">
+            <h2
+              ref={titleRef}
+              className="text-4xl sm:text-5xl font-semibold mb-2 leading-snug"
+            >
               Connecting You with Reliable Skilled Workers
             </h2>
-            <p className="text-gray-300 text-center font-normal text-sm  sm:text-lg leading-relaxed  mt-4 sm:py-9 py-3">
+
+            <p
+              ref={descRef}
+              className="text-gray-300 text-center font-normal text-sm  sm:text-lg leading-relaxed  mt-4 sm:py-9 py-3"
+            >
               Whether it's for a quick fix or a complete service solution,
               Bharat Workers ensures every job is done with professionalism and
               care.

@@ -17,9 +17,9 @@ const Whoweare = () => {
 
   useEffect(() => {
     // Animate image cards
-    imagesRef.current.forEach((img) => {
+    imagesRef.current.forEach(() => {
       gsap.fromTo(
-        img,
+        imagesRef.current,
         {
           opacity: 0,
           y: 50,
@@ -29,10 +29,11 @@ const Whoweare = () => {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 1.5,
+          duration: 1.2,
           ease: 'power3.out',
+          stagger: 0.1, // optional, creates slight delay between images
           scrollTrigger: {
-            trigger: img,
+            trigger: sectionRef.current, // or groupImageRef.current if you prefer
             start: 'top 80%',
             toggleActions: 'play none none reverse',
           },
@@ -164,19 +165,19 @@ const Whoweare = () => {
           </div>
 
           {/* Right Image Grid */}
-          <div className="flex flex-row flex-wrap justify-center gap-4">
+          <div className="flex flex-row  justify-center gap-4">
             {/* Left Column */}
             <div className="flex flex-col gap-4">
               <img
                 src={workers5}
                 alt="Worker 1"
-                className="w-48 rounded-xl object-cover ms-5"
+                className="sm:w-48 w-32 rounded-xl object-cover ms-14"
                 ref={(el) => (imagesRef.current[0] = el)}
               />
               <img
                 src={workers2}
                 alt="Worker 3"
-                className="w-60 rounded-xl object-cover"
+                className="sm:w-64 w-60 rounded-xl object-cover"
                 ref={(el) => (imagesRef.current[1] = el)}
               />
             </div>
@@ -186,13 +187,13 @@ const Whoweare = () => {
               <img
                 src={workers4}
                 alt="Worker 2"
-                className="w-60 mt-8 rounded-xl object-cover"
+                className="w-60 sm:mt-8 rounded-xl object-cover"
                 ref={(el) => (imagesRef.current[2] = el)}
               />
               <img
                 src={workers3}
                 alt="Worker 4"
-                className="w-40 sm:w-48 md:w-56 rounded-xl object-cover"
+                className="sm:w-48 w-32 rounded-xl object-cover"
                 ref={(el) => (imagesRef.current[3] = el)}
               />
             </div>
