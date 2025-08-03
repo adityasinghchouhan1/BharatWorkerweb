@@ -39,7 +39,7 @@ const BookRepair = () => {
           />
           <button
             onClick={() => setShowVideo(true)}
-            className="absolute inset-0 m-auto flex justify-center items-center w-28 h-28 hover:bg-[#012878] rounded-md bg-yellow-400 hover:scale-110 transition duration-300"
+            className="absolute inset-0 m-auto flex justify-center items-center w-28 h-28 hover:bg-[#012878] rounded-xl bg-yellow-400 hover:scale-110 transition duration-300"
           >
             <FaPlay className="text-black w-8 h-8 hover:text-white" />
           </button>
