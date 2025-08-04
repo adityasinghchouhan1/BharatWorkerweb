@@ -1,14 +1,37 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import logoblack from '../../public/logo-black.webp'
 import Button from '../UI/Button'
-import { Menu, X } from 'lucide-react' // install with: npm install lucide-react
+import { Menu, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [showNavbar, setShowNavbar] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY > lastScrollY && currentScrollY > 60) {
+        setShowNavbar(false) // scrolling down
+      } else {
+        setShowNavbar(true) // scrolling up
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
 
   return (
-    <header className="bg-white  py-4 px-6 md:px-12 sticky top-0 z-50">
+    <header
+      className={`bg-white py-4 px-6 md:px-12 sticky top-0 z-50 transition-transform duration-300 ${
+        showNavbar ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center space-x-4">
