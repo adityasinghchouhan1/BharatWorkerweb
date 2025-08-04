@@ -7,20 +7,18 @@ import {
   FaYoutube,
 } from 'react-icons/fa6'
 import { IoCallSharp, IoMailSharp, IoLocationSharp } from 'react-icons/io5'
+import logo from '../../public/logo.webp'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className="bg-[#161c2d] text-white text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
+    <footer className="bg-[#161c2d] text-white text-sm py-0 sm:py-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-12 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 ml-8 md:ml-0">
           {/* Logo + About */}
           <div>
-            <img
-              src="/images/logo.webp"
-              alt="Bharat Worker"
-              className="w-40 mb-4"
-            />
-            <p className="text-white/80 leading-relaxed">
+            <img src={logo} alt="Bharat Worker" className="w-40 mb-4" />
+            <p className="text-white/80 leading-relaxed text-base">
               India’s trusted on-demand workforce platform connecting skilled
               professionals with homes and businesses for cleaning, repair, and
               more.
@@ -45,54 +43,54 @@ const Footer = () => {
           </div>
 
           {/* Company Links */}
-          <div>
+          <div className="text-base">
             <h5 className="font-semibold text-white mb-4">Company</h5>
             <ul className="space-y-2 text-white/80">
               <li>
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="/about">About Us</a>
+                <Link to="/about">About Us</Link>
               </li>
               <li>
-                <a href="/services">Services</a>
+                <Link to="/services">Services</Link>
               </li>
               <li>
-                <a href="/contact">Contact</a>
+                <Link to="/contact">Contact</Link>
               </li>
               <li>
-                <a href="#">Join as a Worker</a>
+                <Link to="#">Join as a Worker</Link>
               </li>
             </ul>
           </div>
 
           {/* Services */}
-          <div>
+          <div className="text-base">
             <h5 className="font-semibold text-white mb-4">Our Services</h5>
             <ul className="space-y-2 text-white/80">
               <li>
-                <a href="/services">Construction Workers</a>
+                <Link to="/services">Construction Workers</Link>
               </li>
               <li>
-                <a href="/services">Plumbers & Electricians</a>
+                <Link to="/services">Plumbers & Electricians</Link>
               </li>
               <li>
-                <a href="/services">Painters & Carpenters</a>
+                <Link to="/services">Painters & Carpenters</Link>
               </li>
               <li>
-                <a href="/services">Housekeeping & Cleaning Staff</a>
+                <Link to="/services">Housekeeping & Cleaning Staff</Link>
               </li>
               <li>
-                <a href="/services">Packers & Movers</a>
+                <Link to="/services">Packers & Movers</Link>
               </li>
               <li>
-                <a href="/services">Home Repair & Maintenance</a>
+                <Link to="/services">Home Repair & Maintenance</Link>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-base">
             <div>
               <h5 className="font-semibold text-white flex items-center gap-2">
                 <IoLocationSharp className="text-yellow-400" /> Visit Our Office
@@ -123,7 +121,7 @@ const Footer = () => {
 
       {/* Subfooter */}
       <div className="bg-[#141a2c] border-t border-white/10 py-4">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-white/70 text-xs">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-white/70 text-sm">
           <span>© 2025 Bharat Workers. All rights reserved.</span>
           <div className="flex gap-4 mt-2 md:mt-0">
             <a href="#" className="hover:underline">

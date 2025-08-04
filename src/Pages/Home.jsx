@@ -15,7 +15,6 @@ import TestimonialCarousel from '../Components/TestimonialCarousel'
 import Counters from '../Components/Counters'
 import PricingSection from '../Components/PricingSection'
 import TrustUs from '../Components/TrustUs'
-
 const featureItems = [
   {
     icon: icon,
