@@ -1,5 +1,3 @@
-// components/IconGrid.jsx
-
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -10,6 +8,7 @@ const IconGrid = ({
   items = [],
   iconBgColor = '#012878',
   iconWrapperClass = 'p-4 rounded-lg mb-4',
+  gridClass = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center',
 }) => {
   const iconRefs = useRef([])
 
@@ -38,8 +37,8 @@ const IconGrid = ({
   }, [])
 
   return (
-    <div className="bg-[#f8f9fb] py-10">
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
+    <div className="bg-[#f8f9fb] sm:py-16 py-10">
+      <div className={`max-w-6xl mx-auto px-4 ${gridClass}`}>
         {items.map((item, index) => (
           <div
             key={index}
@@ -50,10 +49,16 @@ const IconGrid = ({
               className={iconWrapperClass}
               style={{ backgroundColor: iconBgColor }}
             >
-              <img src={item.icon} alt={item.title} className="w-12 h-12" />
+              {typeof item.icon === 'string' ? (
+                <img src={item.icon} alt={item.title} className="w-12 h-12" />
+              ) : (
+                item.icon
+              )}
             </div>
-            <h3 className="font-semibold text-xl mt-5">{item.title}</h3>
-            <p className="text-gray-500 text-lg mt-5">{item.description}</p>
+            <h3 className="font-semibold text-lg mt-3">{item.title}</h3>
+            <p className="text-gray-500 text-lg mt-5 text-center">
+              {item.description}
+            </p>
           </div>
         ))}
       </div>

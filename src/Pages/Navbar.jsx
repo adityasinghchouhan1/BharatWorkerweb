@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import logoblack from '../../public/logo-black.webp'
 import Button from '../UI/Button'
 import { Menu, X } from 'lucide-react' // install with: npm install lucide-react
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -25,21 +26,21 @@ const Navbar = () => {
 
         {/* Menu */}
         <nav className="hidden md:flex space-x-8 text-gray-800 font-medium">
-          <a href="/" className="hover:text-blue-600">
+          <Link to="/" className="hover:text-blue-600">
             Home
-          </a>
-          <a href="/services" className="hover:text-blue-600">
+          </Link>
+          <Link to="/services" className="hover:text-blue-600">
             Services
-          </a>
-          <a href="/how-it-works" className="hover:text-blue-600">
+          </Link>
+          <Link to="/how-it-works" className="hover:text-blue-600">
             How It Works
-          </a>
-          <a href="/about" className="hover:text-blue-600">
+          </Link>
+          <Link to="/about" className="hover:text-blue-600">
             About
-          </a>
-          <a href="/contact" className="hover:text-blue-600">
+          </Link>
+          <Link to="/contact" className="hover:text-blue-600">
             Contact
-          </a>
+          </Link>
         </nav>
 
         {/* Right Side */}

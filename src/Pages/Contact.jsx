@@ -2,31 +2,30 @@ import React from 'react'
 import Wrapper from '../UI/Wrapper'
 import wrapperimg from '../../public/misc/1.webp'
 import IconGrid from '../UI/Iconsection'
-import icon from '../../public/icons/white/labor.webp'
-import icon2 from '../../public/icons/white/calendar.webp'
-import icon3 from '../../public/icons/white/best-price.webp'
-import icon4 from '../../public/icons/white/eco-friendly.webp'
+
+// ✅ Import react-icons
+import { FaWhatsapp, FaEnvelope, FaComments, FaPhoneAlt } from 'react-icons/fa'
 
 const featureItems = [
   {
-    icon: icon,
-    title: 'Verified Workers',
-    description: 'Every worker is background-verified for your safety.',
+    icon: <FaWhatsapp className="text-white text-3xl" />,
+    title: 'WhatsApp Support',
+    description: 'Chat with us instantly on WhatsApp for any query.',
   },
   {
-    icon: icon2,
-    title: 'Job Matching System',
-    description: 'Smart job matching ensures the right fit, every time.',
+    icon: <FaEnvelope className="text-white text-3xl" />,
+    title: 'Email Us',
+    description: 'Send us your questions or feedback via email.',
   },
   {
-    icon: icon3,
-    title: 'Transparent Payments',
-    description: '100% transparent and secure payment process.',
+    icon: <FaComments className="text-white text-3xl" />,
+    title: 'Live Chat',
+    description: 'Real-time assistance through live chat support.',
   },
   {
-    icon: icon4,
-    title: 'Quick Support',
-    description: 'Get quick and friendly support whenever you need it.',
+    icon: <FaPhoneAlt className="text-white text-3xl" />,
+    title: 'Call Center',
+    description: 'Speak to our customer care team directly anytime.',
   },
 ]
 
@@ -35,12 +34,13 @@ const Contact = () => {
     <div>
       <Wrapper
         title="Contact Us Today"
-        description="Have questions, feedback, or need assistance? Our team is just a call or message away. Whether you’re booking a service or want to join us as a partner, we’re ready to support you.."
+        description="Have questions, feedback, or need assistance? Our team is just a call or message away. Whether you’re booking a service or want to join us as a partner, we’re ready to support you."
         image={wrapperimg}
       />
 
       <IconGrid
         items={featureItems}
+        gridClass="grid grid-cols-1 sm:grid-cols-4 gap-8"
         iconBgColor="#012878"
         iconWrapperClass="p-6 rounded-full mb-5"
       />

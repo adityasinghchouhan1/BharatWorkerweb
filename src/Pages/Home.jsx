@@ -8,6 +8,8 @@ import icon from '../../public/icons/white/labor.webp'
 import icon2 from '../../public/icons/white/calendar.webp'
 import icon3 from '../../public/icons/white/best-price.webp'
 import icon4 from '../../public/icons/white/eco-friendly.webp'
+import BookRepair from '../Components/BookRepair'
+import JoinUs from '../Components/JoinUs'
 
 const featureItems = [
   {
@@ -44,8 +46,11 @@ const Home = () => {
       <IconGrid
         items={featureItems}
         iconBgColor="#012878"
+        gridClass="grid grid-cols-1 sm:grid-cols-4 gap-8"
         iconWrapperClass="p-6 rounded-lg shadow-lg"
-      />{' '}
+      />
+      <BookRepair />
+      <JoinUs />
     </div>
   )
 }

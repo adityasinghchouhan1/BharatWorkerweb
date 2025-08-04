@@ -56,7 +56,7 @@ const BookRepair = () => {
           className="flex flex-col justify-center px-6 lg:px-16 py-12"
         >
           <p className="uppercase text-xs mb-4 tracking-wider">
-            <span className="bg-[#083686] p-1 px-3 font-semibold rounded-full text-gray-400">
+            <span className="bg-[#083686] p-1 px-3 font-semibold rounded-full text-gray-100">
               Explore in Minutes
             </span>
           </p>
