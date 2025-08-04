@@ -1,35 +1,40 @@
-import React, { useState, useRef, useEffect } from "react";
-import {X } from "lucide-react";
-import { FaPlay } from "react-icons/fa";
-import { gsap } from "gsap";
-import Button from "../UI/Button";
-import bookrepairvdo from "../assets/bookRepairVdo.mp4";
-import bookrepairimg from "../assets/12.webp";
+import React, { useState, useRef, useEffect } from 'react'
+import { X } from 'lucide-react'
+import { FaPlay } from 'react-icons/fa'
+import { gsap } from 'gsap'
+import bookrepairvdo from '../assets/bookRepairVdo.mp4'
+import bookrepairimg from '../assets/12.webp'
 
 const BookRepair = () => {
-  const [showVideo, setShowVideo] = useState(false);
+  const [showVideo, setShowVideo] = useState(false)
 
   // Refs for animation
-  const sectionRef = useRef(null);
-  const imageRef = useRef(null);
-  const contentRef = useRef(null);
-  const buttonRef = useRef(null);
+  const sectionRef = useRef(null)
+  const imageRef = useRef(null)
+  const contentRef = useRef(null)
+  const buttonRef = useRef(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+      const tl = gsap.timeline({
+        defaults: { ease: 'power3.out', duration: 1 },
+      })
 
       tl.from(imageRef.current, { x: -100, opacity: 0, duration: 1 })
-        .from(contentRef.current, { x: 100, opacity: 0, duration: 1 }, "-=0.7")
-        .from(buttonRef.current, { scale: 0.8, opacity: 0, duration: 0.5 }, "-=0.5");
-    }, sectionRef);
+        .from(contentRef.current, { x: 100, opacity: 0, duration: 1 }, '-=0.7')
+        .from(
+          buttonRef.current,
+          { scale: 0.8, opacity: 0, duration: 0.5 },
+          '-=0.5'
+        )
+    }, sectionRef)
 
-    return () => ctx.revert(); // cleanup on unmount
-  }, []);
+    return () => ctx.revert() // cleanup on unmount
+  }, [])
 
   return (
     <section ref={sectionRef} className="relative bg-[#012878] text-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[450px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
         {/* Left - Full Height Image with Play Button */}
         <div ref={imageRef} className="relative">
           <img
@@ -46,25 +51,27 @@ const BookRepair = () => {
         </div>
 
         {/* Right - Text Content */}
-        <div ref={contentRef} className="flex flex-col justify-center px-6 lg:px-16 py-12">
+        <div
+          ref={contentRef}
+          className="flex flex-col justify-center px-6 lg:px-16 py-12"
+        >
           <p className="uppercase text-xs mb-4 tracking-wider">
-            <span className="bg-[#083686] p-1 px-3 font-semibold rounded-full">
+            <span className="bg-[#083686] p-1 px-3 font-semibold rounded-full text-gray-400">
               Explore in Minutes
             </span>
           </p>
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4 leading-tight">
+          <h2 className="text-3xl lg:text-5xl font-semibold mb-4 leading-tight text-start">
             Find Trusted Workers Fast with Bharat Workers App
           </h2>
-          <p className="text-base text-[#FFFFFFBF] me-24 mt-3 font-semibold mb-6">
+          <p className="text-base text-[#FFFFFFBF] sm:me-24 mt-3 font-semibold mb-6 text-pretty">
             Discover how Bharat Workers helps you connect with verified
             professionals near you. Watch this short video to learn how our
             platform makes hiring safe, simple, and hassle-free.
           </p>
           <div ref={buttonRef} className="w-fit scale-90">
-            <Button
-              title="Book a Repair"
-              onClick={() => (window.location.href = "book-repair.html")}
-            />
+            <button className="py-3 px-7 border border-white rounded-full hover:border-none hover:shadow-lg hover:shadow-cyan-600 transition-all duration-500">
+              Book a Repair
+            </button>
           </div>
         </div>
       </div>
@@ -89,7 +96,7 @@ const BookRepair = () => {
         </div>
       )}
     </section>
-  );
-};
+  )
+}
 
-export default BookRepair;
+export default BookRepair
