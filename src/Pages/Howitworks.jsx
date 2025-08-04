@@ -7,6 +7,7 @@ import icon2 from '../../public/icons/steps/notes.png'
 import icon3 from '../../public/icons/steps/cleaner.png'
 import icon4 from '../../public/icons/steps/pay.png'
 import icon5 from '../../public/icons/steps/sunbathing.png'
+import BookRepair from '../Components/BookRepair'
 
 const featureItems = [
   {
@@ -49,6 +50,7 @@ const Howitworks = () => {
         iconBgColor="#012878"
         iconWrapperClass="p-6 rounded-lg mb-5"
       />
+      <BookRepair />
     </div>
   )
 }
