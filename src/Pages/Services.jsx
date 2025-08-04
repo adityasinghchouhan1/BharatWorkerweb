@@ -11,7 +11,9 @@ const Services = () => {
         description="Whether it's for a quick fix or a complete service solution, Bharat Workers ensures every job is done with professionalism and care."
         image={wrapperimg}
       />
-      <ServiceCards />
+      <div className="mt-10">
+        <ServiceCards />
+      </div>
     </div>
   )
 }

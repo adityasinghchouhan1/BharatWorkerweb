@@ -10,24 +10,24 @@ import ContectUsForm from '../Components/ContectUsForm'
 const featureItems = [
   {
     icon: <FaPhoneAlt className="text-white text-3xl" />,
-    title: 'Call Center',
-    description: 'Speak to our customer care team directly anytime.',
+    title: "Let's Talk",
+    description: '+91 98765 43210',
   },
   {
     icon: <FaEnvelope className="text-white text-3xl" />,
     title: 'Email Us',
-    description: 'Send us your questions or feedback via email.',
+    description: 'support@bharatworkers.in',
   },
   {
     icon: <FaWhatsapp className="text-white text-3xl" />,
     title: 'WhatsApp Support',
-    description: 'Chat with us instantly on WhatsApp for any query.',
+    description: '+91 98765 43210',
   },
 
   {
     icon: <FaComments className="text-white text-3xl" />,
     title: 'Live Chat',
-    description: 'Real-time assistance through live chat support.',
+    description: 'Available 8 AM–9 PM',
   },
 ]
 
@@ -42,7 +42,7 @@ const Contact = () => {
 
       <IconGrid
         items={featureItems}
-        gridClass="grid grid-cols-1 sm:grid-cols-4 gap-8"
+        gridClass="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
         iconBgColor="#012878"
         iconWrapperClass="p-6 rounded-full mb-5"
       />

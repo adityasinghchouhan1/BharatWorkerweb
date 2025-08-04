@@ -14,6 +14,8 @@ import WeAreIndia from '../Components/WeAreIndia'
 import TestimonialCarousel from '../Components/TestimonialCarousel'
 import Counters from '../Components/Counters'
 import PricingSection from '../Components/PricingSection'
+import TrustUs from '../Components/TrustUs'
+
 const featureItems = [
   {
     icon: icon,
@@ -49,11 +51,12 @@ const Home = () => {
       <IconGrid
         items={featureItems}
         iconBgColor="#012878"
-        gridClass="grid grid-cols-1 sm:grid-cols-4 gap-8"
+        gridClass="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
         iconWrapperClass="p-6 rounded-lg shadow-lg"
       />
       <Counters />
       <WeAreIndia />
+      <TrustUs />
       <PricingSection />
       <TestimonialCarousel />
       <BookRepair />

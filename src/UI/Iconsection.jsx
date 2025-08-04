@@ -56,7 +56,7 @@ const IconGrid = ({
               )}
             </div>
             <h3 className="font-semibold text-lg mt-3">{item.title}</h3>
-            <p className="text-gray-500 text-lg mt-5 text-center">
+            <p className="text-gray-500 text-base mt-5 text-center">
               {item.description}
             </p>
           </div>

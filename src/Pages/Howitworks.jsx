@@ -50,7 +50,7 @@ const Howitworks = () => {
       <IconGrid
         items={featureItems}
         iconBgColor="#012878"
-        gridClass="grid grid-cols-1 sm:grid-cols-5 gap-8"
+        gridClass="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8"
         iconWrapperClass="p-6 rounded-lg mb-5"
       />
 
