@@ -9,6 +9,8 @@ import icon4 from '../../public/icons/steps/pay.png'
 import icon5 from '../../public/icons/steps/sunbathing.png'
 import BookRepair from '../Components/BookRepair'
 import Features from '../Components/feactures'
+import TestimonialCarousel from '../Components/TestimonialCarousel'
+
 const featureItems = [
   {
     icon: icon,
@@ -51,7 +53,9 @@ const Howitworks = () => {
         gridClass="grid grid-cols-1 sm:grid-cols-5 gap-8"
         iconWrapperClass="p-6 rounded-lg mb-5"
       />
+
       <BookRepair />
+      <TestimonialCarousel />
       <Features />
     </div>
   )

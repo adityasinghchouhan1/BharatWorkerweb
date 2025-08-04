@@ -8,9 +8,7 @@ import bookrepairimg from '../assets/12.webp'
 const BookRepair = () => {
   const [showVideo, setShowVideo] = useState(false)
 
-  // Refs for animation
   const sectionRef = useRef(null)
-  const imageRef = useRef(null)
   const contentRef = useRef(null)
   const buttonRef = useRef(null)
 
@@ -20,23 +18,21 @@ const BookRepair = () => {
         defaults: { ease: 'power3.out', duration: 1 },
       })
 
-      tl.from(imageRef.current, { x: -100, opacity: 0, duration: 1 })
-        .from(contentRef.current, { x: 100, opacity: 0, duration: 1 }, '-=0.7')
-        .from(
-          buttonRef.current,
-          { scale: 0.8, opacity: 0, duration: 0.5 },
-          '-=0.5'
-        )
+      tl.from(contentRef.current, { y: 100, opacity: 0 }).from(
+        buttonRef.current,
+        { scale: 1.5, opacity: 0, duration: 0.6 },
+        '-=0.5'
+      )
     }, sectionRef)
 
-    return () => ctx.revert() // cleanup on unmount
+    return () => ctx.revert()
   }, [])
 
   return (
     <section ref={sectionRef} className="relative bg-[#012878] text-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
-        {/* Left - Full Height Image with Play Button */}
-        <div ref={imageRef} className="relative">
+        {/* Left - Image */}
+        <div className="relative">
           <img
             src={bookrepairimg}
             alt="Workers Cleaning"
@@ -50,7 +46,7 @@ const BookRepair = () => {
           </button>
         </div>
 
-        {/* Right - Text Content */}
+        {/* Right - Content */}
         <div
           ref={contentRef}
           className="flex flex-col justify-center px-6 lg:px-16 py-12"
@@ -68,7 +64,7 @@ const BookRepair = () => {
             professionals near you. Watch this short video to learn how our
             platform makes hiring safe, simple, and hassle-free.
           </p>
-          <div ref={buttonRef} className="w-fit scale-90">
+          <div ref={buttonRef} className="w-fit">
             <button className="py-3 px-7 border border-white rounded-full hover:border-none hover:shadow-lg hover:shadow-cyan-600 transition-all duration-500">
               Book a Repair
             </button>

@@ -37,7 +37,7 @@ const IconGrid = ({
   }, [])
 
   return (
-    <div className="bg-[#f8f9fb] sm:py-16 py-10">
+    <div className="bg-[#f8f9fb] sm:py-16 py-10 overflow-hidden">
       <div className={`max-w-6xl mx-auto px-4 ${gridClass}`}>
         {items.map((item, index) => (
           <div

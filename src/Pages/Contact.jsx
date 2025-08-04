@@ -5,12 +5,13 @@ import IconGrid from '../UI/Iconsection'
 
 // ✅ Import react-icons
 import { FaWhatsapp, FaEnvelope, FaComments, FaPhoneAlt } from 'react-icons/fa'
+import ContectUsForm from '../Components/ContectUsForm'
 
 const featureItems = [
   {
-    icon: <FaWhatsapp className="text-white text-3xl" />,
-    title: 'WhatsApp Support',
-    description: 'Chat with us instantly on WhatsApp for any query.',
+    icon: <FaPhoneAlt className="text-white text-3xl" />,
+    title: 'Call Center',
+    description: 'Speak to our customer care team directly anytime.',
   },
   {
     icon: <FaEnvelope className="text-white text-3xl" />,
@@ -18,14 +19,15 @@ const featureItems = [
     description: 'Send us your questions or feedback via email.',
   },
   {
+    icon: <FaWhatsapp className="text-white text-3xl" />,
+    title: 'WhatsApp Support',
+    description: 'Chat with us instantly on WhatsApp for any query.',
+  },
+
+  {
     icon: <FaComments className="text-white text-3xl" />,
     title: 'Live Chat',
     description: 'Real-time assistance through live chat support.',
-  },
-  {
-    icon: <FaPhoneAlt className="text-white text-3xl" />,
-    title: 'Call Center',
-    description: 'Speak to our customer care team directly anytime.',
   },
 ]
 
@@ -44,6 +46,7 @@ const Contact = () => {
         iconBgColor="#012878"
         iconWrapperClass="p-6 rounded-full mb-5"
       />
+      <ContectUsForm />
     </div>
   )
 }

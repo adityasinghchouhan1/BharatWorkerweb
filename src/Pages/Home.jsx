@@ -10,7 +10,10 @@ import icon3 from '../../public/icons/white/best-price.webp'
 import icon4 from '../../public/icons/white/eco-friendly.webp'
 import BookRepair from '../Components/BookRepair'
 import JoinUs from '../Components/JoinUs'
-
+import WeAreIndia from '../Components/WeAreIndia'
+import TestimonialCarousel from '../Components/TestimonialCarousel'
+import Counters from '../Components/Counters'
+import PricingSection from '../Components/PricingSection'
 const featureItems = [
   {
     icon: icon,
@@ -49,6 +52,10 @@ const Home = () => {
         gridClass="grid grid-cols-1 sm:grid-cols-4 gap-8"
         iconWrapperClass="p-6 rounded-lg shadow-lg"
       />
+      <Counters />
+      <WeAreIndia />
+      <PricingSection />
+      <TestimonialCarousel />
       <BookRepair />
       <JoinUs />
     </div>
