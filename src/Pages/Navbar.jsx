@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import logoblack from '../../public/logo-black.webp'
 import Button from '../UI/Button'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, User } from 'lucide-react' // changed from LogIn to User
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
@@ -12,13 +12,11 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-
       if (currentScrollY > lastScrollY && currentScrollY > 60) {
-        setShowNavbar(false) // scrolling down
+        setShowNavbar(false)
       } else {
-        setShowNavbar(true) // scrolling up
+        setShowNavbar(true)
       }
-
       setLastScrollY(currentScrollY)
     }
 
@@ -78,37 +76,44 @@ const Navbar = () => {
             title="Download App"
             onClick={() => alert('Download clicked')}
           />
+          {/* User Icon for Registration */}
+          <Link
+            to="/registration"
+            className="flex items-center justify-center bg-blue-950 text-white p-2 rounded-md hover:bg-blue-800 transition-all"
+          >
+            <User size={18} />
+          </Link>
         </div>
       </div>
 
       {/* Sidebar - Mobile Only */}
       {menuOpen && (
         <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-md py-4 px-6 space-y-4 z-40">
-          <a href="/" className="block text-gray-800 hover:text-blue-600">
+          <Link to="/" className="block text-gray-800 hover:text-blue-600">
             Home
-          </a>
-          <a
-            href="/services"
+          </Link>
+          <Link
+            to="/services"
             className="block text-gray-800 hover:text-blue-600"
           >
             Services
-          </a>
-          <a
-            href="/how-it-works"
+          </Link>
+          <Link
+            to="/how-it-works"
             className="block text-gray-800 hover:text-blue-600"
           >
             How It Works
-          </a>
-          <a href="/about" className="block text-gray-800 hover:text-blue-600">
+          </Link>
+          <Link to="/about" className="block text-gray-800 hover:text-blue-600">
             About
-          </a>
-          <a
-            href="/contact"
+          </Link>
+          <Link
+            to="/contact"
             className="block text-gray-800 hover:text-blue-600"
           >
             Contact
-          </a>
-          <div className="pt-2 border-t">
+          </Link>
+          <div className="pt-2 border-t space-y-2">
             <p className="text-gray-500 text-sm">Need Help?</p>
             <h5 className="text-blue-600 font-semibold mb-2">
               +91 98765 43210
@@ -117,6 +122,12 @@ const Navbar = () => {
               title="Download App"
               onClick={() => alert('Download clicked')}
             />
+            <Link
+              to="/registration"
+              className="inline-flex items-center justify-center bg-blue-950 text-white p-2 rounded-md hover:bg-blue-800 transition-all"
+            >
+              <User size={18} />
+            </Link>
           </div>
         </div>
       )}

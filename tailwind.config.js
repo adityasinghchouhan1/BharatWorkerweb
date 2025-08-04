@@ -8,5 +8,16 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.writing-vertical-rl': {
+          writingMode: 'vertical-rl',
+        },
+        '.rotate-180': {
+          transform: 'rotate(180deg)',
+        },
+      })
+    },
+  ],
 }

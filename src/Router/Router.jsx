@@ -6,6 +6,7 @@ import Services from '../Pages/Services'
 import Contact from '../Pages/Contact'
 import Howitworks from '../Pages/Howitworks'
 import BookRepair from '../Components/BookRepair'
+import Registration from '../Registration/Registration'
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: 'Book-repair',
         element: <BookRepair />,
+      },
+      {
+        path: 'registration',
+        element: <Registration />,
       },
     ],
   },
