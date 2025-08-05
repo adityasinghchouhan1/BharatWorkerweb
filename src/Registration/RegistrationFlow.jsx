@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import AboutYouForm from './Registration'
 import Services from './Services'
 import ServicesType from './ServicesType'
-const steps = [AboutYouForm, Services, ServicesType]
+import Experience from './Experience'
+import AddressWork from './AddressWork'
+const steps = [AboutYouForm, Services, ServicesType, Experience, AddressWork]
 
 const RegistrationFlow = () => {
   const [stepIndex, setStepIndex] = useState(0)
