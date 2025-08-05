@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import useRegistration from './RegistrationContext/useRegistration'
 
 import AC from '../../public/Registration/AC.svg'
@@ -25,6 +25,11 @@ const serviceOptions = [
 
 const Services = ({ onNext }) => {
   const { formData, updateFormData } = useRegistration()
+  useEffect(() => {
+    console.log('Updated form data:', formData)
+  }, [formData])
+  console.log('Updated form data services:', formData)
+
   const [selectedServices, setSelectedServices] = useState(
     formData.services || []
   )
