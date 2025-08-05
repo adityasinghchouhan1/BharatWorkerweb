@@ -1,6 +1,8 @@
 import React from 'react'
 import Logo from '../../public/bw.png'
-import { FaGoogle, FaFacebookF, FaMobileAlt } from 'react-icons/fa'
+import { FcGoogle } from 'react-icons/fc'
+
+import { FaFacebookF, FaMobileAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const RegistrationMethod = () => {
@@ -17,7 +19,7 @@ const RegistrationMethod = () => {
       {/* Buttons */}
       <div className="w-full max-w-xs space-y-4">
         <button className="w-full flex items-center gap-3 px-4 py-3 border rounded-xl text-black text-sm font-medium hover:bg-gray-100 transition">
-          <FaGoogle className="text-lg" />
+          <FcGoogle className="text-lg" />
           Continue with Google
         </button>
 
