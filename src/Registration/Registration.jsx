@@ -10,6 +10,10 @@ const AboutYouForm = ({ onNext }) => {
 
   console.log('Registration context:', context) // Should NOT be undefined
   const { formData, updateFormData } = context
+  useEffect(() => {
+    console.log('Updated form data:', formData)
+  }, [formData])
+  console.log('Updated form data:', formData)
 
   const [localData, setLocalData] = useState({
     name: '',

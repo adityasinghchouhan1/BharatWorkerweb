@@ -28,6 +28,10 @@ const serviceIcons = {
 
 const ServicesType = ({ onNext }) => {
   const { formData, updateFormData } = useRegistration()
+  useEffect(() => {
+    console.log('Updated form data:', formData)
+  }, [formData])
+  console.log('Updated form data services:', formData)
   const selectedServices = formData.services || []
 
   const [categoryTypes, setCategoryTypes] = useState([]) // [{ _id, name }]
