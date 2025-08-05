@@ -137,7 +137,7 @@ const VerifyDocument = ({ onNext, onBack }) => {
       </div>
 
       {/* Upload Work License or Certificate */}
-      <div className="mb-6">
+      <div className="mb-3">
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Work License or Certificates
         </label>
@@ -159,7 +159,9 @@ const VerifyDocument = ({ onNext, onBack }) => {
           />
         </label>
       </div>
-
+      <p className="text-sm text-gray-400 mb-4 text-center">
+        Documents will be review by the admin with in 24 hours.
+      </p>
       {/* Save & Continue */}
       <button
         onClick={handleNext}
