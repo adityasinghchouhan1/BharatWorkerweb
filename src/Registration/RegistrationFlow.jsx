@@ -4,7 +4,15 @@ import Services from './Services'
 import ServicesType from './ServicesType'
 import Experience from './Experience'
 import AddressWork from './AddressWork'
-const steps = [AboutYouForm, Services, ServicesType, Experience, AddressWork]
+import VerifyDocument from './VerifyDocument'
+const steps = [
+  AboutYouForm,
+  Services,
+  ServicesType,
+  Experience,
+  AddressWork,
+  VerifyDocument,
+]
 
 const RegistrationFlow = () => {
   const [stepIndex, setStepIndex] = useState(0)

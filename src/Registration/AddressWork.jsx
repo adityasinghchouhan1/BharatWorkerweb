@@ -63,7 +63,6 @@ const AddressWork = ({ onNext, onBack }) => {
           className="text-gray-600 mb-4 text-left flex items-center"
         >
           <FaArrowLeft className="mr-2" />
-          Back
         </button>
 
         <h2 className="text-2xl font-bold mb-1 text-gray-900">
