@@ -1,18 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { FiCamera, FiCalendar } from 'react-icons/fi'
 
-const AboutYouForm = () => {
-  const [formData, setFormData] = useState({
+import useRegistration from './RegistrationContext/useRegistration'
+
+const AboutYouForm = ({ onNext }) => {
+  const context = useRegistration()
+
+  console.log('Registration context:', context) // Should NOT be undefined
+  const { formData, updateFormData } = context
+
+  const [localData, setLocalData] = useState({
     name: '',
     dob: '',
     phone: '',
     email: '',
   })
 
+  useEffect(() => {
+    // Pre-fill form if returning to this step
+    setLocalData(formData)
+  }, [formData])
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setLocalData({ ...localData, [e.target.name]: e.target.value })
+  }
+
+  const handleNext = () => {
+    updateFormData(localData)
+    onNext() // move to next step
   }
 
   return (
@@ -42,7 +59,7 @@ const AboutYouForm = () => {
           <input
             type="text"
             name="name"
-            value={formData.name}
+            value={localData.name}
             onChange={handleChange}
             placeholder="Akshay"
             className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1 text-sm"
@@ -59,7 +76,7 @@ const AboutYouForm = () => {
               type="text"
               name="dob"
               placeholder="DD-MM-YYYY"
-              value={formData.dob}
+              value={localData.dob}
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1 text-sm pr-10"
             />
@@ -74,8 +91,8 @@ const AboutYouForm = () => {
           </label>
           <PhoneInput
             country={'in'}
-            value={formData.phone}
-            onChange={(phone) => setFormData({ ...formData, phone })}
+            value={localData.phone}
+            onChange={(phone) => setLocalData({ ...localData, phone })}
             inputStyle={{
               width: '100%',
               height: '38px',
@@ -91,7 +108,7 @@ const AboutYouForm = () => {
           <input
             type="email"
             name="email"
-            value={formData.email}
+            value={localData.email}
             onChange={handleChange}
             placeholder="example@gmail.com"
             className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1 text-sm"
@@ -99,7 +116,10 @@ const AboutYouForm = () => {
         </div>
 
         {/* Next Button */}
-        <button className="mt-4 w-full bg-blue-800 text-white py-2 rounded-full text-sm font-medium hover:bg-blue-900 transition">
+        <button
+          onClick={handleNext}
+          className="mt-4 w-full bg-blue-800 text-white py-2 rounded-full text-sm font-medium hover:bg-blue-900 transition"
+        >
           Next
         </button>
       </div>

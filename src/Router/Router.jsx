@@ -10,6 +10,8 @@ import RegistrationMethod from '../Registration/RegistrationMethod'
 import PhoneLoginPage from '../Registration/PhoneLoginPage'
 import OtpVerificationPage from '../Registration/OtpVerificationPage'
 import AboutYouForm from '../Registration/Registration'
+import RegistrationFlow from '../Registration/RegistrationFlow'
+import { RegistrationProvider } from '../Registration/RegistrationContext/RegistrationContext'
 
 const router = createBrowserRouter([
   {
@@ -54,7 +56,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'AboutYouForm',
-        element: <AboutYouForm />,
+        element: (
+          <RegistrationProvider>
+            <RegistrationFlow />
+          </RegistrationProvider>
+        ),
       },
     ],
   },
