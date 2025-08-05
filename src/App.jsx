@@ -9,8 +9,9 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <div className=" sm:hidden relative"></div>
-      <ScrollProgress />
+      <div className="hidden sm:flex">
+        <ScrollProgress />
+      </div>
       <Outlet />
       <Footer />
     </div>

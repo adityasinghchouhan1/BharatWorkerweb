@@ -6,7 +6,10 @@ import Services from '../Pages/Services'
 import Contact from '../Pages/Contact'
 import Howitworks from '../Pages/Howitworks'
 import BookRepair from '../Components/BookRepair'
-import Registration from '../Registration/Registration'
+import RegistrationMethod from '../Registration/RegistrationMethod'
+import PhoneLoginPage from '../Registration/PhoneLoginPage'
+import OtpVerificationPage from '../Registration/OtpVerificationPage'
+import AboutYouForm from '../Registration/Registration'
 
 const router = createBrowserRouter([
   {
@@ -39,7 +42,19 @@ const router = createBrowserRouter([
       },
       {
         path: 'registration',
-        element: <Registration />,
+        element: <RegistrationMethod />,
+      },
+      {
+        path: 'PhoneLoginPage',
+        element: <PhoneLoginPage />,
+      },
+      {
+        path: 'OtpVerificationPage',
+        element: <OtpVerificationPage />,
+      },
+      {
+        path: 'AboutYouForm',
+        element: <AboutYouForm />,
       },
     ],
   },
