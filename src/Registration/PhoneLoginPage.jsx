@@ -33,12 +33,7 @@ const PhoneLoginPage = () => {
         />
 
         {/* Login Button */}
-        {/* <Link
-          to="/OtpVerificationPage"
-          className="bg-[#002f6c] text-white w-full py-3 rounded-full font-semibold text-sm mb-6 mt-3"
-        >
-          Sing up
-        </Link> */}
+
         <Link
           to="/OtpVerificationPage"
           className="bg-[#002f6c] text-white w-full py-3 rounded-full font-semibold text-sm mb-6 flex text-center justify-center"
