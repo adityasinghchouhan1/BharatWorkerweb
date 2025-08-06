@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const RegistrationMethod = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white px-6">
-      {/* Logo */}
+      {/* ============Logo ================*/}
       <div className="mb-6">
         <img src={Logo} alt="BW Logo" className="w-28" />
       </div>
