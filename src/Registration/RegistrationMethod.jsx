@@ -16,7 +16,7 @@ const RegistrationMethod = () => {
       {/* Heading */}
       <h1 className="text-2xl font-semibold text-black mb-6">Let's you in</h1>
 
-      {/* Buttons */}
+      {/* ================ Buttons ======================*/}
       <div className="w-full max-w-xs space-y-4">
         <button className="w-full flex items-center gap-3 px-4 py-3 border rounded-xl text-black text-sm font-medium hover:bg-gray-100 transition">
           <FcGoogle className="text-lg" />
