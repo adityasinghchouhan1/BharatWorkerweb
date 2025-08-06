@@ -37,7 +37,7 @@ const RegistrationMethod = () => {
         </Link>
       </div>
 
-      {/* Footer */}
+      {/*===============================- Footer -============================*/}
       <p className="mt-6 text-sm text-gray-500">
         Already have an account?{' '}
         <span className="text-blue-600 font-medium cursor-pointer hover:underline">
